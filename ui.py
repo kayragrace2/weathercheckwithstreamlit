@@ -201,7 +201,7 @@ def ana_kart(veri: dict, ruzgar_yon: str):
 
     st.markdown(f"""
     <div class="weather-card">
-        <p class="city-title"style="color:#FFA500; >{emoji} {veri['name']}</p>
+        <p class="city-title"style="color:#FFA500;" >{emoji} {veri['name']}</p>
         <span class="desc-badge">{w['description'].capitalize()}</span>
         <span class="wind-badge">💨 {wind['speed']:.1f} m/s · {ruzgar_yon}</span>
         <div class="metric-box">
@@ -230,26 +230,26 @@ def ana_kart(veri: dict, ruzgar_yon: str):
 
 
 def tahmin_kartlari(gunluk: list[dict]):
-    st.markdown('<p class="section-title">📅 5 Günlük Tahmin</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-title"style="color:#0000FF;">📅 5 Günlük Tahmin</p>', unsafe_allow_html=True)
     cols = st.columns(len(gunluk))
     for col, g in zip(cols, gunluk):
         with col:
             st.markdown(f"""
             <div class="forecast-card">
-                <div class="forecast-day">{g['gun']}<br><small>{g['tarih']}</small></div>
-                <span class="forecast-emoji">{g['emoji']}</span>
-                <div class="forecast-temp">↑{g['max']}° ↓{g['min']}°</div>
-                <div class="forecast-desc">{g['desc']}</div>
+                <div class="forecast-day"style="color:#FFA500;">{g['gun']}<br><small>{g['tarih']}</small></div>
+                <span class="forecast-emoji"style="color:#FFA500;">{g['emoji']}</span>
+                <div class="forecast-temp"style="color:#FFA500;">↑{g['max']}° ↓{g['min']}°</div>
+                <div class="forecast-desc"style="color:#FFA500;">{g['desc']}</div>
             </div>
             """, unsafe_allow_html=True)
 
 
 def sicaklik_grafigi(gunluk: list[dict]):
-    st.markdown('<p class="section-title">📈 Sıcaklık Grafiği</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-title"style="color:#0000FF;">📈 Sıcaklık Grafiği</p>', unsafe_allow_html=True)
 
     light      = _is_light()
-    label_col  = "#374151" if light else "#ffffff"
-    legend_col = "#374151" if light else "#ffffff"
+    label_col  = "#374151" if light else "#81C784"
+    legend_col = "#374151" if light else "#81C784"
 
     df = pd.DataFrame({
         "Gün":       [g["gun"] for g in gunluk],
