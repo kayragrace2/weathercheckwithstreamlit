@@ -1,15 +1,10 @@
-# ── ui.py — Streamlit Bileşenleri (Dark + Light Mod Destekli) ────────────────
+
 
 import streamlit as st
 import pandas as pd
 import altair as alt
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Strateji: JS/CSS class hilelerine GÜVENMIYORUZ.
-# Python tarafında st.get_option("theme.base") ile modu okuyoruz ve
-# doğru token setini doğrudan :root'a yazıyoruz.
-# Bu %100 güvenilir — hiçbir selector sorununa takılmaz.
-# ─────────────────────────────────────────────────────────────────────────────
+
 
 BASE_CSS = """
 <style>
